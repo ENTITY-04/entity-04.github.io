@@ -1,0 +1,158 @@
+/* Brand palette */
+:root {
+    --cat-cream: #fff6ec;
+    --cat-peach: #ffcab6;
+    --cat-coral: #ff8b74;
+    --cat-slate: #3b3d4d;
+    --cat-mint: #c5f5d7;
+}
+
+/* Base layout */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    color: var(--cat-slate);
+    background-color: var(--cat-cream);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Fredoka', 'Nunito', sans-serif;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Hero */
+.hero-section {
+    background: radial-gradient(circle at top left, var(--cat-mint), var(--cat-cream) 65%);
+}
+
+.hero-img {
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 50px rgba(59, 61, 77, 0.15);
+    animation: catFloat 7s ease-in-out infinite;
+}
+
+.checklist-card .list-group-item {
+    border: none;
+    border-bottom: 1px solid rgba(59, 61, 77, 0.08);
+}
+
+/* Checklist badge */
+.checklist-card .badge {
+    background-color: rgba(255, 139, 116, 0.15);
+    color: var(--cat-coral);
+}
+
+/* Section label */
+.section-label {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cat-coral);
+}
+
+/* Care cards */
+.care-card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 15px 35px rgba(59, 61, 77, 0.1);
+}
+
+.care-icon {
+    font-size: 2rem;
+}
+
+/* Comment card */
+.comment-card {
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(59, 61, 77, 0.08);
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+}
+
+/* Primary CTA buttons */
+.btn-coral {
+    background-color: var(--cat-coral);
+    border: none;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(255, 139, 116, 0.45);
+}
+
+/* Button hover state */
+.btn-coral:hover,
+.btn-coral:focus {
+    background-color: #ff7557;
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(255, 139, 116, 0.55);
+}
+
+/* Float animation for hero art */
+@keyframes catFloat {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Scroll reveal base state */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Revealed state */
+[data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pop variant */
+[data-animate="pop"] {
+    transform: scale(0.92);
+}
+
+/* Pop variant when visible */
+[data-animate="pop"].is-visible {
+    transform: scale(1);
+}
+
+/* Paw confetti animation */
+@keyframes pawPop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 10px) scale(0.4);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -20px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50px) scale(0.7);
+    }
+}
