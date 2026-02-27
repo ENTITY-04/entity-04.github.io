@@ -71,42 +71,148 @@ function releasePawConfetti(container) {
     setTimeout(() => paw.remove(), 1200);
 }
 
-async function loadCatTypes(track) {
-    const statusEl = document.getElementById('catTypeStatus');
+function loadCatTypes(track) {
+    const $statusEl = $('#catTypeStatus');
 
-    try {
-        const response = await fetch('data/cat-types.json');
-        if (!response.ok) {
-            throw new Error(`Failed to fetch cat types: ${response.status}`);
-        }
-
-        const cats = await response.json();
-        track.innerHTML = '';
-        const observer = getRevealObserver();
-
-        cats.forEach((cat) => {
-            const card = createCatTypeCard(cat);
-            track.appendChild(card);
-            if (observer) {
-                observer.observe(card);
+    return $.ajax({
+        url: 'https://api.thecatapi.com/v1/breeds',
+        method: 'GET',
+        data: { limit: 20 },
+        dataType: 'json'
+    })
+        .then((breeds) => {
+            const normalizedCats = normalizeBreedData(breeds).slice(0, 9);
+            if (!normalizedCats.length) {
+                throw new Error('No cat data returned');
             }
+
+            track.innerHTML = '';
+            const observer = getRevealObserver();
+
+            normalizedCats.forEach((cat) => {
+                const card = createCatTypeCard(cat);
+                track.appendChild(card);
+                if (observer) {
+                    observer.observe(card);
+                }
+            });
+
+            track.dataset.cardCount = String(normalizedCats.length);
+            track.dataset.catTypes = encodeURIComponent(JSON.stringify(normalizedCats));
+
+            assignFeaturedCats(normalizedCats);
+
+            if ($statusEl.length) {
+                $statusEl.text('Enjoy the slow drift through the clowder.');
+            }
+
+            return true;
+        })
+        .catch((error) => {
+            track.innerHTML = '<div class="cat-type-error" role="alert">Unable to load cat personalities right now. Please refresh or try again later.</div>';
+            delete track.dataset.cardCount;
+            delete track.dataset.catTypes;
+            if ($statusEl.length) {
+                $statusEl.text('Unable to load cat personalities at the moment.');
+            }
+            console.error('Failed to load cat personalities.', error);
+            return false;
         });
+}
 
-        track.dataset.cardCount = String(cats.length);
-
-        if (statusEl) {
-            statusEl.textContent = 'Enjoy the slow drift through the clowder.';
-        }
-
-        return cats.length > 0;
-    } catch (error) {
-        track.innerHTML = '<div class="cat-type-error" role="alert">Unable to load cat personalities right now. Please refresh or try again later.</div>';
-        delete track.dataset.cardCount;
-        if (statusEl) {
-            statusEl.textContent = 'Unable to load cat personalities at the moment.';
-        }
-        return false;
+function normalizeBreedData(breeds) {
+    if (!Array.isArray(breeds)) {
+        return [];
     }
+
+    return breeds
+        .filter((breed) => !!breed)
+        .map((breed, index) => ({
+            name: breed.name || 'Mystery Cat',
+            tagline: extractTagline(breed.temperament),
+            description: breed.description || 'This cat is still writing their story.',
+            image: buildImagePayload(breed, index),
+            attributes: buildAttributes(breed)
+        }));
+}
+
+function extractTagline(temperament) {
+    if (!temperament) {
+        return 'Charming Companion';
+    }
+    return temperament.split(',')[0].trim();
+}
+
+function buildAttributes(breed) {
+    return [
+        {
+            label: 'Energy',
+            value: levelToDescriptor(breed.energy_level)
+        },
+        {
+            label: 'Coat',
+            value: formatCoatLabel(breed)
+        },
+        {
+            label: 'Affection',
+            value: levelToDescriptor(breed.affection_level)
+        }
+    ];
+}
+
+function levelToDescriptor(level) {
+    const scale = ['Very Low', 'Low', 'Moderate', 'High', 'Very High'];
+    if (!Number.isFinite(level)) {
+        return 'Varies';
+    }
+    const idx = Math.min(Math.max(Math.round(level) - 1, 0), scale.length - 1);
+    return scale[idx];
+}
+
+function formatCoatLabel(breed) {
+    if (breed?.coat) {
+        return breed.coat.split(',')[0].trim();
+    }
+    if (breed?.hairless) {
+        return 'Hairless';
+    }
+    if (breed?.origin) {
+        return `${breed.origin} native`;
+    }
+    return 'Varied';
+}
+
+function buildImagePayload(breed, index) {
+    const src = selectBestImageUrl(breed) || getFallbackImage(index);
+    return {
+        src,
+        alt: `${breed?.name || 'Cat'} lounging`
+    };
+}
+
+function selectBestImageUrl(breed) {
+    if (breed?.image?.url) {
+        return ensureHttps(breed.image.url);
+    }
+    if (breed?.reference_image_id) {
+        return `https://cdn2.thecatapi.com/images/${breed.reference_image_id}.jpg`;
+    }
+    return null;
+}
+
+function getFallbackImage(index) {
+    const base = 600 + (index % 5) * 10;
+    return `https://placekitten.com/${base}/${base - 40}`;
+}
+
+function ensureHttps(url) {
+    if (!url) {
+        return url;
+    }
+    if (url.startsWith('http://')) {
+        return url.replace('http://', 'https://');
+    }
+    return url;
 }
 
 function createCatTypeCard(cat) {
@@ -120,7 +226,7 @@ function createCatTypeCard(cat) {
     article.setAttribute('data-animate', 'fade-up');
     article.innerHTML = `
         <div class="cat-type-image ratio ratio-4x3">
-            <img src="${cat.image?.src || ''}" alt="${cat.image?.alt || cat.name || 'Cat photo'}">
+            <img src="${cat.image?.src || ''}" alt="${cat.image?.alt || cat.name || 'Cat photo'}" loading="lazy">
         </div>
         <div class="cat-type-body p-4">
             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -137,7 +243,44 @@ function createCatTypeCard(cat) {
     return article;
 }
 
-// Auto-scroll the cat type carousel every 3 seconds, pausing on hover
+function assignFeaturedCats(cats) {
+    if (!Array.isArray(cats) || !cats.length) {
+        return;
+    }
+
+    const heroCat = cats[0];
+    const aboutCat = cats[1] || heroCat;
+    const communityCat = cats[2] || aboutCat;
+
+    applyCatToFeature({ imgId: 'heroCatImg', labelId: 'heroCatLabel', showTagline: false }, heroCat);
+    applyCatToFeature({ imgId: 'aboutCatImg', labelId: 'aboutCatLabel', showTagline: false }, aboutCat);
+    applyCatToFeature({ imgId: 'communityCatImg', labelId: 'communityCatLabel', showTagline: false }, communityCat);
+}
+
+function applyCatToFeature(target, cat) {
+    if (!cat) {
+        return;
+    }
+
+    const imageEl = document.getElementById(target.imgId);
+    const labelEl = document.getElementById(target.labelId);
+
+    if (imageEl) {
+        const src = cat.image?.src || getFallbackImage(0);
+        imageEl.src = src;
+        imageEl.alt = cat.image?.alt || `${cat.name || 'Cat'} relaxing`;
+        imageEl.loading = 'lazy';
+    }
+
+    if (labelEl) {
+        const showTagline = target.showTagline !== false;
+        labelEl.textContent = cat.name
+            ? `${cat.name}${showTagline && cat.tagline ? ` • ${cat.tagline}` : ''}`
+            : '';
+    }
+}
+
+// Auto-scroll the cat type carousel continuously by recycling data
 function setupCatCarousel(track) {
     const baseCard = track.querySelector('.cat-type-card');
     if (!baseCard || track.scrollWidth <= track.clientWidth) {
@@ -145,21 +288,11 @@ function setupCatCarousel(track) {
     }
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const shouldRespectMotion = () => prefersReducedMotion.matches;
+    const shouldPauseForMotion = () => prefersReducedMotion.matches;
 
-    const originalCount = Number(track.dataset.cardCount) || track.querySelectorAll('.cat-type-card').length;
-    const originals = Array.from(track.querySelectorAll('.cat-type-card')).slice(0, originalCount);
-    originals.forEach((card) => {
-        const clone = card.cloneNode(true);
-        clone.classList.add('is-visible');
-        clone.removeAttribute('data-animate');
-        track.appendChild(clone);
-    });
-
-    let intervalId = null;
-    let normalizeTimeout = null;
-    let isHovered = false;
-    let currentIndex = 0;
+    const storedData = track.dataset.catTypes ? JSON.parse(decodeURIComponent(track.dataset.catTypes)) : [];
+    const totalData = storedData.length;
+    let nextDataIndex = totalData;
 
     const getGap = () => {
         const styles = window.getComputedStyle(track);
@@ -175,40 +308,57 @@ function setupCatCarousel(track) {
         return card.getBoundingClientRect().width + getGap();
     };
 
-    const normalizePosition = () => {
-        const stepDistance = getStepDistance();
-        const loopWidth = stepDistance * originalCount;
-        while (track.scrollLeft >= loopWidth) {
-            track.scrollLeft -= loopWidth;
-            currentIndex -= originalCount;
+    const appendNextCard = () => {
+        let cardToAppend;
+        if (totalData) {
+            const data = storedData[nextDataIndex % totalData];
+            nextDataIndex += 1;
+            cardToAppend = createCatTypeCard(data);
+        } else {
+            cardToAppend = track.firstElementChild ? track.firstElementChild.cloneNode(true) : null;
+        }
+
+        if (cardToAppend) {
+            cardToAppend.classList.add('is-visible');
+            cardToAppend.removeAttribute('data-animate');
+            track.appendChild(cardToAppend);
         }
     };
 
-    const scheduleNormalize = () => {
-        if (normalizeTimeout) {
-            clearTimeout(normalizeTimeout);
+    const transitionDuration = 600;
+    let intervalId = null;
+    let isAnimating = false;
+
+    const cycleCards = () => {
+        const step = getStepDistance();
+        if (step <= 0) {
+            return;
         }
-        normalizeTimeout = setTimeout(() => {
-            normalizePosition();
-            normalizeTimeout = null;
-        }, 650);
+        isAnimating = true;
+        track.scrollBy({ left: step, behavior: 'smooth' });
+        setTimeout(() => {
+            const firstCard = track.querySelector('.cat-type-card');
+            if (firstCard) {
+                firstCard.remove();
+                appendNextCard();
+                track.scrollLeft = Math.max(track.scrollLeft - step, 0);
+            }
+            isAnimating = false;
+        }, transitionDuration);
     };
 
-    const scrollNext = () => {
-        currentIndex += 1;
-        const targetLeft = currentIndex * getStepDistance();
-        track.scrollTo({ left: targetLeft, behavior: 'smooth' });
-        scheduleNormalize();
+    const tick = () => {
+        if (shouldPauseForMotion() || isAnimating) {
+            return;
+        }
+        cycleCards();
     };
 
     const start = () => {
-        if (shouldRespectMotion() || isHovered) {
-            stop();
+        if (intervalId || shouldPauseForMotion()) {
             return;
         }
-        if (!intervalId) {
-            intervalId = setInterval(scrollNext, 3000);
-        }
+        intervalId = setInterval(tick, 3000);
     };
 
     const stop = () => {
@@ -216,51 +366,22 @@ function setupCatCarousel(track) {
             clearInterval(intervalId);
             intervalId = null;
         }
-        if (normalizeTimeout) {
-            clearTimeout(normalizeTimeout);
-            normalizeTimeout = null;
-        }
     };
 
-    const pauseAutoScroll = () => {
-        if (!isHovered) {
-            isHovered = true;
-        }
-        stop();
-    };
-
-    const resumeAutoScroll = () => {
-        isHovered = false;
-        start();
-    };
-
-    track.addEventListener('pointerenter', pauseAutoScroll);
-    track.addEventListener('pointerleave', resumeAutoScroll);
-    track.addEventListener('pointercancel', resumeAutoScroll);
-    track.addEventListener('pointerup', resumeAutoScroll);
-    track.addEventListener('touchend', resumeAutoScroll);
-    track.addEventListener('touchcancel', resumeAutoScroll);
-    track.addEventListener('mouseleave', resumeAutoScroll);
-
-    track.addEventListener('scroll', () => {
-        if (!isHovered) {
-            currentIndex = Math.round(track.scrollLeft / getStepDistance());
-        }
-        if (!isHovered && !shouldRespectMotion() && !intervalId) {
-            start();
-        }
+    window.addEventListener('resize', () => {
+        track.scrollLeft = 0;
     });
 
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
             stop();
-        } else if (!isHovered) {
+        } else {
             start();
         }
     });
 
     const motionListener = () => {
-        if (shouldRespectMotion()) {
+        if (shouldPauseForMotion()) {
             stop();
         } else {
             start();

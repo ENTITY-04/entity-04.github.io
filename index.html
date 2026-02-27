@@ -11,10 +11,31 @@
 
         gtag('config', 'G-K8SKMY497D');
     </script>
+
+    <!-- Crawl and Index -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Playful cat facts, care tips, and a cozy space to share your cat stories.">
-    <title>The Cozy Cat Corner</title>
+    <meta name="description" content="Cozy Cat Corner – your friendly guide to cat breeds, fun feline facts, easy cat care tips, and a warm community for cat lovers. Discover popular cat types, grooming routines, nutrition advice, and share your own cat stories.">
+    <meta name="keywords" content="cat facts, cat care tips, cat breeds, cat types, feline care, cat grooming, cat nutrition, cat community, kitten care, indoor cats, cat lover, cozy cat corner">
+    <meta name="author" content="Cozy Cat Corner">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://entity-04.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://entity-04.github.io/">
+    <meta property="og:title" content="The Cozy Cat Corner – Cat Facts, Breeds & Care Tips">
+    <meta property="og:description" content="Explore cat breeds, feline facts, and simple care routines. A cozy space for cat lovers to learn and share.">
+    <meta property="og:image" content="https://entity-04.github.io/images/The_Cozy_Cat_Corner.jpg">
+    <meta property="og:site_name" content="The Cozy Cat Corner">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Cozy Cat Corner – Cat Facts, Breeds & Care Tips">
+    <meta name="twitter:description" content="Explore cat breeds, feline facts, and simple care routines. A cozy space for cat lovers to learn and share.">
+    <meta name="twitter:image" content="https://entity-04.github.io/images/The_Cozy_Cat_Corner.jpg">
+
+    <title>The Cozy Cat Corner – Cat Facts, Breeds &amp; Care Tips</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
@@ -56,12 +77,13 @@
                             thriving, and share your own purr-sonal tales.</p>
                         <div class="d-flex flex-wrap gap-3 mt-4">
                             <a class="btn btn-lg btn-primary btn-coral" href="#about">Learn Cat Facts</a>
-                            <a class="btn btn-outline-secondary" href="#comments">Share a story</a>
+                            <a class="btn btn-outline-secondary d-flex align-items-center justify-content-center" href="#comments">Share a story</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center" data-animate="pop">
-                        <img class="img-fluid hero-img" src="https://placekitten.com/900/700"
-                            alt="Playful orange cat lounging in a sunny window">
+                    <div class="col-lg-6 d-flex flex-column align-items-center" data-animate="fade-up">
+                        <img id="heroCatImg" class="img-fluid hero-img" src="https://placekitten.com/900/700"
+                            alt="Featured cat breed from The Cozy Cat Corner – discover cats from around the world">
+                        <p class="hero-caption small text-muted mt-2" id="heroCatLabel" aria-live="polite"></p>
                     </div>
                 </div>
 
@@ -83,14 +105,11 @@
                             <li>🎵 Cats make over 100 vocal sounds, from gentle chirps to authoritative yowls.</li>
                         </ul>
                     </div>
-                    <div class="col-lg-6" data-animate="fade-up">
-                        <div class="card border-0 shadow-sm">
-                            <img src="https://placekitten.com/650/500" class="card-img-top" alt="Curious cat peeking through leaves">
-                            <div class="card-body">
-                                <h3 class="h5">Your photo lives here</h3>
-                                <p class="mb-0">Replace this image with your favorite feline snapshot and add a quick caption to introduce them to the community.</p>
-                            </div>
+                    <div class="col-lg-6 text-center" data-animate="fade-up">
+                        <div class="card border-0 shadow-sm about-cat-card">
+                            <img id="aboutCatImg" src="https://placekitten.com/650/500" class="card-img-top" alt="A curious domestic cat – learn interesting cat facts and feline behaviour on Cozy Cat Corner">
                         </div>
+                        <p class="small text-muted mt-2" id="aboutCatLabel" aria-live="polite"></p>
                     </div>
                 </div>
             </div>
@@ -105,13 +124,6 @@
                         <h2 class="h1">Find the cat energy that fits your home.</h2>
                         <p class="mb-0">Browse a few popular personalities—from velcro cuddlers to curious athletes—and note quick care cues before
                             you fall in love.</p>
-                    </div>
-                    <div class="col-lg-4" data-animate="fade-up">
-                        <div class="cat-type-tip h-100">
-                            <p class="mb-1 fw-semibold">How to use this list</p>
-                            <p class="mb-0">Match the activity, grooming needs, and social vibes to your lifestyle. Mix and match traits if you have a
-                                multi-cat clowder.</p>
-                        </div>
                     </div>
                 </div>
                 <div class="cat-type-carousel" role="region" aria-label="Browse cat personalities">
@@ -176,10 +188,6 @@
                                     <input type="text" class="form-control" id="name" placeholder="Luna's human" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email (optional)</label>
-                                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                                </div>
-                                <div class="mb-3">
                                     <label for="message" class="form-label">Message</label>
                                     <textarea class="form-control" id="message" rows="4" placeholder="Luna chirps at birds every dawn..." required></textarea>
                                 </div>
@@ -190,14 +198,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6" data-animate="fade-up">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="https://placekitten.com/720/640" class="card-img-top" alt="Tabby cat looking at camera">
-                            <div class="card-body">
-                                <h3 class="h5">Community Photo Wall</h3>
-                                <p class="mb-0">Drop in your own photo file names later (e.g., images/hobbes-window.jpg) so visitors can meet your whiskered roommates.</p>
-                            </div>
-                        </div>
+                    <div class="col-lg-6 d-flex flex-column align-items-center" data-animate="fade-up">
+                        <img id="communityCatImg" src="https://placekitten.com/720/640"
+                            class="img-fluid rounded-4 shadow-sm d-block mx-auto"
+                            alt="Community cat photo – share your cat story on The Cozy Cat Corner"
+                            style="max-height:420px;max-width:100%;object-fit:cover;">
+                        <p class="small text-muted mt-2 text-center" id="communityCatLabel" aria-live="polite"></p>
                     </div>
                 </div>
             </div>
@@ -208,10 +214,23 @@
     <footer class="py-4">
         <div class="container text-center small">
             <p class="mb-1">Made with purrs & Bootstrap • 2026</p>
-            <p class="mb-0">Replace placeholder images with your own cats to personalize the gallery.</p>
         </div>
     </footer>
 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "The Cozy Cat Corner",
+        "url": "https://entity-04.github.io/",
+        "description": "Cat breeds, feline facts, care tips, and a community space for cat lovers.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "The Cozy Cat Corner"
+        }
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
