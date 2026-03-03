@@ -1,4 +1,4 @@
-# Cozy Cat Corner – TODO Tracker
+# Cosy Cat Corner – TODO Tracker
 
 Use this checklist to monitor progress outside of the page UI. Update the status column as work evolves.
 
