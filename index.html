@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,8 +15,8 @@
     <!-- Crawl and Index -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cosy Cat Corner – your friendly guide to cat breeds, fun feline facts, easy cat care tips, and a warm community for cat lovers. Discover popular cat types, grooming routines, nutrition advice, and share your own cat stories.">
-    <meta name="keywords" content="cat facts, cat care tips, cat breeds, cat types, feline care, cat grooming, cat nutrition, cat community, kitten care, indoor cats, cat lover, Cosy cat corner">
+    <meta name="description" content="Cosy Cat Corner – your friendly guide to cat breeds, cat health tips, cat grooming routines, and fun cat toys. Discover popular cat breeds, easy cat care tips, cat nutrition advice, and a warm community for cat lovers.">
+    <meta name="keywords" content="cat facts, cat care tips, cat breeds, cat health, cat grooming, cat toys, cat nutrition, cat care, kitten care, indoor cats, cat lover, cat community, Cosy cat corner">
     <meta name="author" content="Cosy Cat Corner">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://entity-04.github.io/">
@@ -24,18 +24,22 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://entity-04.github.io/">
-    <meta property="og:title" content="The Cosy Cat Corner – Cat Facts, Breeds & Care Tips">
-    <meta property="og:description" content="Explore cat breeds, feline facts, and simple care routines. A Cosy space for cat lovers to learn and share.">
+    <meta property="og:title" content="The Cosy Cat Corner – Cat Facts, Cat Breeds, Cat Health &amp; Cat Care Tips">
+    <meta property="og:description" content="Explore cat breeds, cat health tips, cat grooming routines, cat toys, and fun cat facts. A Cosy space for cat lovers to learn and share.">
     <meta property="og:image" content="https://entity-04.github.io/images/The_Cosy_Cat_Corner.jpg">
     <meta property="og:site_name" content="The Cosy Cat Corner">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Cosy Cat Corner – Cat Facts, Breeds & Care Tips">
-    <meta name="twitter:description" content="Explore cat breeds, feline facts, and simple care routines. A Cosy space for cat lovers to learn and share.">
+    <meta name="twitter:title" content="The Cosy Cat Corner – Cat Facts, Cat Breeds, Cat Health &amp; Cat Care Tips">
+    <meta name="twitter:description" content="Explore cat breeds, cat health tips, cat grooming routines, cat toys, and fun cat facts. A Cosy space for cat lovers to learn and share.">
     <meta name="twitter:image" content="https://entity-04.github.io/images/The_Cosy_Cat_Corner.jpg">
+    <meta property="og:locale" content="en_US">
 
-    <title>The Cosy Cat Corner – Cat Facts, Breeds &amp; Care Tips</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>" type="image/svg+xml">
+
+    <title>The Cosy Cat Corner – Cat Facts, Cat Breeds, Cat Health &amp; Cat Care Tips</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
@@ -44,21 +48,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#catNav" data-bs-offset="80" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target="#catNav" data-bs-root-margin="-80px 0px -50%" tabindex="0">
     <!-- Primary Navigation -->
     <nav id="catNav" class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#home" aria-label="The Cosy Cat Corner home">🐾 Cosy Cat Corner</a>
+            <a class="navbar-brand" href="#cat-home" aria-label="The Cosy Cat Corner home">🐾 Cosy Cat Corner</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About Cats</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#types">Cat Types</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#care">Cat Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cat-home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-cat">About Cats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cat-breeds">Cat Breeds</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cat-care">Cat Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cat-meme">Cat Meme</a></li>
                     <li class="nav-item"><a class="nav-link" href="#comments">Leave a Comment</a></li>
                 </ul>
             </div>
@@ -67,7 +72,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero-section py-5">
+        <section id="cat-home" class="hero-section py-5">
             <div class="container py-4">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6" data-animate="fade-up">
@@ -76,13 +81,14 @@
                         <p class="lead mt-3">Curl up with delightful trivia, discover simple routines that keep your feline friends
                             thriving, and share your own purr-sonal tales.</p>
                         <div class="d-flex flex-wrap gap-3 mt-4">
-                            <a class="btn btn-lg btn-primary btn-coral" href="#about">Learn Cat Facts</a>
+                            <a class="btn btn-lg btn-primary btn-coral" href="#about-cat">Learn Cat Facts</a>
                             <a class="btn btn-outline-secondary d-flex align-items-center justify-content-center" href="#comments">Share a story</a>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex flex-column align-items-center" data-animate="fade-up">
                         <img id="heroCatImg" class="img-fluid hero-img" src="https://placekitten.com/900/700"
-                            alt="Featured cat breed from The Cosy Cat Corner – discover cats from around the world">
+                            alt="Featured cat breed – cat health, cat care and cat grooming guide on Cosy Cat Corner"
+                            width="900" height="700" fetchpriority="high">
                         <p class="hero-caption small text-muted mt-2" id="heroCatLabel" aria-live="polite"></p>
                     </div>
                 </div>
@@ -91,13 +97,13 @@
         </section>
 
         <!-- About Cats Section -->
-        <section id="about" class="py-5">
+        <section id="about-cat" class="py-5" aria-label="About Cats and Cat Facts">
             <div class="container py-4">
                 <p class="section-label mb-2">About Cats</p>
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6" data-animate="fade-up">
-                        <h2 class="h1">Tiny tigers with giant personalities.</h2>
-                        <p>Every kitty carries a sprinkle of mystery. Here are a few delightful facts to kickstart your curiosity.</p>
+                        <h2 class="h1">Cat Facts: Tiny Tigers with Giant Personalities.</h2>
+                        <p>Every kitty carries a sprinkle of mystery. Here are a few delightful cat facts to kickstart your curiosity.</p>
                         <ul class="list-unstyled ps-3">
                             <li class="mb-3">🐱 Cats have a specialized collarbone that lets them always land on their feet—called the righting reflex.</li>
                             <li class="mb-3">🌀 A cat's whiskers are as wide as their body, helping them judge tight spaces in complete darkness.</li>
@@ -107,7 +113,8 @@
                     </div>
                     <div class="col-lg-6 text-center" data-animate="fade-up">
                         <div class="card border-0 shadow-sm about-cat-card">
-                            <img id="aboutCatImg" src="https://placekitten.com/650/500" class="card-img-top" alt="A curious domestic cat – learn interesting cat facts and feline behaviour on Cosy Cat Corner">
+                        <img id="aboutCatImg" src="https://placekitten.com/650/500" class="card-img-top"
+                            alt="Curious domestic cat – cat facts, cat health tips and cat behaviour on Cosy Cat Corner">
                         </div>
                         <p class="small text-muted mt-2" id="aboutCatLabel" aria-live="polite"></p>
                     </div>
@@ -115,8 +122,8 @@
             </div>
         </section>
 
-        <!-- Cat Types Section -->
-        <section id="types" class="py-5 bg-white">
+        <!-- Cat Breeds Section -->
+        <section id="cat-breeds" class="py-5 bg-white" aria-label="Cat Breeds Guide">
             <div class="container py-4">
                 <p class="section-label mb-2">Meet the Breeds</p>
                 <div class="row g-4 align-items-stretch mb-4">
@@ -130,51 +137,126 @@
                     <div class="cat-type-track" id="catTypeTrack" aria-live="polite">
                         <div class="cat-type-placeholder" role="status">Loading Cosy companions...</div>
                     </div>
-                    <p class="cat-type-status" id="catTypeStatus" role="status">Loading Cosy companions...</p>
+                    <p class="cat-type-status" id="catBreedStatus" role="status">Loading Cosy companions...</p>
                 </div>
             </div>
         </section>
 
         <!-- Cat Care Section -->
-        <section id="care" class="py-5 bg-white">
+        <section id="cat-care" class="py-5 bg-white" aria-label="Cat Care, Cat Health and Cat Grooming">
             <div class="container py-4">
                 <p class="section-label mb-2">Cat Care</p>
-                <h2 class="h1 mb-4">Simple routines for happy whiskers.</h2>
+                <h2 class="h1 mb-4">Cat Care: Simple Routines for Happy Whiskers.</h2>
+                <!-- Core 4 tips - always visible -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
                     <div class="col" data-animate="fade-up">
                         <div class="card care-card h-100 p-4">
-                            <div class="care-icon" aria-hidden="true">🥣</div>
-                            <h3 class="h5 mt-3">Balanced Meals</h3>
+                            <div class="care-icon" aria-hidden="true">&#x1F963;</div>
+                            <h3 class="h5 mt-3">Cat Nutrition &amp; Balanced Meals</h3>
                             <p class="mb-0">Mix wet and dry food with fresh water daily. Adjust portions for age, activity, and vet guidance.</p>
                         </div>
                     </div>
                     <div class="col" data-animate="fade-up">
                         <div class="card care-card h-100 p-4">
-                            <div class="care-icon" aria-hidden="true">🪶</div>
-                            <h3 class="h5 mt-3">Play & Enrichment</h3>
-                            <p class="mb-0">Short play bursts twice a day keep instincts sharp—rotate wand toys, puzzle feeders, and cardboard forts.</p>
+                            <div class="care-icon" aria-hidden="true">&#x1FAB6;</div>
+                            <h3 class="h5 mt-3">Cat Toys &amp; Enrichment</h3>
+                            <p class="mb-0">Short play bursts twice a day keep instincts sharp&mdash;rotate cat wand toys, puzzle feeders, and cardboard forts.</p>
                         </div>
                     </div>
                     <div class="col" data-animate="fade-up">
                         <div class="card care-card h-100 p-4">
-                            <div class="care-icon" aria-hidden="true">🧼</div>
-                            <h3 class="h5 mt-3">Groom & Glow</h3>
-                            <p class="mb-0">Weekly brushing reduces shedding and hairballs. Pair grooming with treats to build trust.</p>
+                            <div class="care-icon" aria-hidden="true">&#x1F9FC;</div>
+                            <h3 class="h5 mt-3">Cat Grooming Tips</h3>
+                            <p class="mb-0">Weekly cat grooming reduces shedding and hairballs. Pair brushing with treats to build trust.</p>
                         </div>
                     </div>
                     <div class="col" data-animate="fade-up">
                         <div class="card care-card h-100 p-4">
-                            <div class="care-icon" aria-hidden="true">🩺</div>
-                            <h3 class="h5 mt-3">Vet Check-ins</h3>
-                            <p class="mb-0">Schedule annual wellness visits and keep vaccines current. Track any changes in appetite or energy.</p>
+                            <div class="care-icon" aria-hidden="true">&#x1FA7A;</div>
+                            <h3 class="h5 mt-3">Cat Health Check-ins</h3>
+                            <p class="mb-0">Schedule annual cat health wellness visits and keep vaccines current. Track any changes in appetite or energy.</p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Extra 6 tips - revealed on demand -->
+                <div id="careExtras" class="care-extras-wrap">
+                    <div class="care-extras-inner">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 pt-4">
+                        <div class="col" data-animate="fade-up">
+                            <div class="card care-card h-100 p-4">
+                                <div class="care-icon" aria-hidden="true">&#x1FAB7;</div>
+                                <h3 class="h5 mt-3">Cat Dental Care</h3>
+                                <p class="mb-0">Brush your cat's teeth a few times a week with cat-safe toothpaste. Dental treats and water additives help keep plaque at bay.</p>
+                            </div>
+                        </div>
+                        <div class="col" data-animate="fade-up">
+                            <div class="card care-card h-100 p-4">
+                                <div class="care-icon" aria-hidden="true">&#x1F9F9;</div>
+                                <h3 class="h5 mt-3">Litter Box Hygiene</h3>
+                                <p class="mb-0">Scoop daily and do a full litter change weekly. Keep one more litter box than the number of cats, placed in quiet spots.</p>
+                            </div>
+                        </div>
+                        <div class="col" data-animate="fade-up">
+                            <div class="card care-card h-100 p-4">
+                                <div class="care-icon" aria-hidden="true">&#x1F6CB;&#xFE0F;</div>
+                                <h3 class="h5 mt-3">Cat Rest &amp; Cosy Spaces</h3>
+                                <p class="mb-0">Provide warm, elevated resting spots away from drafts. Cats sleep 12&ndash;16 hours a day&mdash;quality rest supports their cat health.</p>
+                            </div>
+                        </div>
+                        <div class="col" data-animate="fade-up">
+                            <div class="card care-card h-100 p-4">
+                                <div class="care-icon" aria-hidden="true">&#x1F3E0;</div>
+                                <h3 class="h5 mt-3">Safe Indoor Environment</h3>
+                                <p class="mb-0">Cat-proof your home by securing toxic plants, loose cables, and small objects. Window screens let cats enjoy fresh air safely.</p>
+                            </div>
+                        </div>
+                        <div class="col" data-animate="fade-up">
+                            <div class="card care-card h-100 p-4">
+                                <div class="care-icon" aria-hidden="true">&#x1F4A7;</div>
+                                <h3 class="h5 mt-3">Cat Hydration</h3>
+                                <p class="mb-0">Many cats prefer running water&mdash;a cat water fountain encourages drinking and supports kidney and urinary cat health.</p>
+                            </div>
+                        </div>
+                        <div class="col" data-animate="fade-up">
+                            <div class="card care-card h-100 p-4">
+                                <div class="care-icon" aria-hidden="true">&#x2696;&#xFE0F;</div>
+                                <h3 class="h5 mt-3">Cat Weight Management</h3>
+                                <p class="mb-0">Overweight cats face serious cat health risks. Use portion-controlled meals, feeding puzzles, and active cat toys to maintain a healthy weight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div><!-- /.care-extras-inner -->
+                </div><!-- /#careExtras -->
+                <div class="text-center mt-4">
+                    <button id="careToggleBtn" class="btn btn-outline-secondary care-toggle-btn" aria-expanded="false" aria-controls="careExtras">
+                        See 6 more tips <span class="care-toggle-arrow" aria-hidden="true">&#x25BE;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funny Cat Pics Section -->
+        <section id="cat-meme" class="py-5" aria-label="Funny Cat Photos and Cat Memes">
+            <div class="container py-4">
+                <p class="section-label mb-2">Hall of Hilarity</p>
+                <div class="row g-4 align-items-end mb-4">
+                    <div class="col-lg-8" data-animate="fade-up">
+                        <h2 class="h1">Cats being gloriously unhinged.</h2>
+                        <p class="mb-0">A rotating gallery of random feline faces guaranteed to make you snort-laugh.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end" data-animate="fade-up">
+                        <button id="moreCatsBtn" class="btn btn-lg btn-coral text-white">🐱 More Cats!</button>
+                    </div>
+                </div>
+                <div class="funny-grid" id="funnyGrid">
+                    <div class="funny-placeholder" role="status">Herding cats…</div>
                 </div>
             </div>
         </section>
 
         <!-- Comment Section -->
-        <section id="comments" class="py-5">
+        <section id="comments" class="py-5" aria-label="Cat Community – Share Your Cat Story">
             <div class="container py-4">
                 <p class="section-label mb-2">Leave a Comment</p>
                 <div class="row g-4">
@@ -201,7 +283,7 @@
                     <div class="col-lg-6 d-flex flex-column align-items-center" data-animate="fade-up">
                         <img id="communityCatImg" src="https://placekitten.com/720/640"
                             class="img-fluid rounded-4 shadow-sm d-block mx-auto"
-                            alt="Community cat photo – share your cat story on The Cosy Cat Corner"
+                            alt="Cat lover community photo – share cat stories, cat grooming tips and cat care advice on Cosy Cat Corner"
                             style="max-height:420px;max-width:100%;object-fit:cover;">
                         <p class="small text-muted mt-2 text-center" id="communityCatLabel" aria-live="polite"></p>
                     </div>
@@ -213,6 +295,14 @@
     <!-- Site Footer -->
     <footer class="py-4">
         <div class="container text-center small">
+            <nav class="mb-2" aria-label="Footer navigation">
+                <a href="#cat-home" class="text-muted text-decoration-none me-3">Home</a>
+                <a href="#about-cat" class="text-muted text-decoration-none me-3">Cat Facts</a>
+                <a href="#cat-breeds" class="text-muted text-decoration-none me-3">Cat Breeds</a>
+                <a href="#cat-care" class="text-muted text-decoration-none me-3">Cat Care</a>
+                <a href="#cat-meme" class="text-muted text-decoration-none me-3">Cat Memes</a>
+                <a href="#comments" class="text-muted text-decoration-none">Community</a>
+            </nav>
             <p class="mb-1">🐾 Cosy Cat Corner • Made with purrs • 2026</p>
         </div>
     </footer>
@@ -223,11 +313,121 @@
         "@type": "WebSite",
         "name": "The Cosy Cat Corner",
         "url": "https://entity-04.github.io/",
-        "description": "Cat breeds, feline facts, care tips, and a community space for cat lovers.",
+        "description": "Cat breeds, cat facts, cat care tips, cat grooming, cat health, and a community space for cat lovers.",
         "publisher": {
             "@type": "Organization",
             "name": "The Cosy Cat Corner"
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do cats always land on their feet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Cats have a specialised collarbone that lets them always land on their feet through a reflex called the righting reflex."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do a cat's whiskers help them?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A cat's whiskers are as wide as their body, helping them judge tight spaces and navigate in complete darkness."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many hours a day do cats sleep?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The average cat naps 12–16 hours a day. Deep sleep fuels their crepuscular playtimes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many sounds can cats make?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cats can make over 100 vocal sounds, from gentle chirps to authoritative yowls."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Cat Care Tips",
+        "description": "Essential cat care routines covering cat nutrition, cat toys, cat grooming, and cat health.",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Cat Nutrition & Balanced Meals",
+                "description": "Mix wet and dry food with fresh water daily. Adjust portions for age, activity, and vet guidance."
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Cat Toys & Enrichment",
+                "description": "Short play bursts twice a day keep instincts sharp. Rotate cat wand toys, puzzle feeders, and cardboard forts."
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Cat Grooming Tips",
+                "description": "Weekly cat grooming reduces shedding and hairballs. Pair brushing with treats to build trust."
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Cat Health Check-ins",
+                "description": "Schedule annual cat health wellness visits and keep vaccines current. Track any changes in appetite or energy."
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Cat Dental Care",
+                "description": "Brush your cat's teeth a few times a week with cat-safe toothpaste. Dental treats and water additives help keep plaque at bay."
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Litter Box Hygiene",
+                "description": "Scoop daily and do a full litter change weekly. Keep one more litter box than the number of cats, placed in quiet spots."
+            },
+            {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Cat Rest & Cosy Spaces",
+                "description": "Provide warm, elevated resting spots away from drafts. Cats sleep 12-16 hours a day; quality rest supports their cat health."
+            },
+            {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "Safe Indoor Environment",
+                "description": "Cat-proof your home by securing toxic plants, loose cables, and small objects. Window screens let cats enjoy fresh air safely."
+            },
+            {
+                "@type": "ListItem",
+                "position": 9,
+                "name": "Cat Hydration",
+                "description": "Many cats prefer running water. A cat water fountain encourages drinking and supports kidney and urinary cat health."
+            },
+            {
+                "@type": "ListItem",
+                "position": 10,
+                "name": "Cat Weight Management",
+                "description": "Overweight cats face serious cat health risks. Use portion-controlled meals, feeding puzzles, and active cat toys to maintain a healthy weight."
+            }
+        ]
     }
     </script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

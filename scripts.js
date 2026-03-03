@@ -1,6 +1,62 @@
 let revealObserver = null;
 
 // Initialize site interactions once DOM is ready
+const FUNNY_CAPTIONS = [
+    'Judging your entire existence.',
+    'Did someone say... treats?',
+    'This is MY box now.',
+    'Mondays. Just... Mondays.',
+    'I was DEFINITELY awake.',
+    '3 AM and I have questions.',
+    'Gravity? Never heard of it.',
+    'I knocked that off on purpose.',
+    'Excuse me, that is MY sunbeam.',
+    'Plotting world domination, brb.',
+    'Perfectly loafed.',
+    'The meeting could have been an email.',
+    'New spot acquired.',
+    'Sir, I am WORKING.',
+    'My face when someone touches my belly.',
+    'Chaos loading… 100%.',
+];
+
+async function loadFunnyCats() {
+    const grid = document.getElementById('funnyGrid');
+    const btn = document.getElementById('moreCatsBtn');
+    if (!grid) return;
+
+    if (btn) btn.disabled = true;
+    grid.innerHTML = '<div class="funny-placeholder" role="status">Herding cats…</div>';
+
+    try {
+        const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=6');
+        const data = (await response.json()).slice(0, 6);
+        if (!Array.isArray(data) || !data.length) throw new Error('No cats found');
+
+        const shuffledCaptions = [...FUNNY_CAPTIONS].sort(() => Math.random() - 0.5);
+        grid.innerHTML = '';
+        const observer = getRevealObserver();
+
+        data.forEach((item, i) => {
+            const caption = shuffledCaptions[i % shuffledCaptions.length];
+            const card = document.createElement('div');
+            card.className = 'funny-card';
+            card.setAttribute('data-animate', 'pop');
+            card.innerHTML = `
+                <img src="${item.url}" alt="Funny cat – ${caption}" loading="lazy">
+                <p class="funny-caption">${caption}</p>
+            `;
+            grid.appendChild(card);
+            observer.observe(card);
+        });
+    } catch (err) {
+        grid.innerHTML = '<div class="funny-placeholder" role="alert">Too many cats at once – please try again! 🐾</div>';
+        console.error('Failed to load funny cats.', err);
+    } finally {
+        if (btn) btn.disabled = false;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const commentForm = document.getElementById('commentForm');
     const commentAlert = document.getElementById('commentAlert');
@@ -15,6 +71,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    loadFunnyCats();
+
+    const moreCatsBtn = document.getElementById('moreCatsBtn');
+    if (moreCatsBtn) {
+        moreCatsBtn.addEventListener('click', loadFunnyCats);
+    }
+
+    const careToggleBtn = document.getElementById('careToggleBtn');
+    const careExtras = document.getElementById('careExtras');
+    const careInner = careExtras ? careExtras.querySelector('.care-extras-inner') : null;
+    if (careToggleBtn && careExtras && careInner) {
+        // After the expand transition finishes, let shadows bleed outside freely
+        careExtras.addEventListener('transitionend', () => {
+            if (careExtras.classList.contains('is-open')) {
+                careInner.style.overflow = 'visible';
+            }
+        });
+
+        careToggleBtn.addEventListener('click', () => {
+            const isOpen = careExtras.classList.toggle('is-open');
+            careToggleBtn.setAttribute('aria-expanded', String(isOpen));
+            careToggleBtn.innerHTML = isOpen
+                ? 'Show fewer tips <span class="care-toggle-arrow" aria-hidden="true">▾</span>'
+                : 'See 6 more tips <span class="care-toggle-arrow" aria-hidden="true">▾</span>';
+            if (isOpen) {
+                const obs = getRevealObserver();
+                careExtras.querySelectorAll('[data-animate]').forEach((el) => obs.observe(el));
+            } else {
+                // Re-clip immediately so the collapse animation is clean
+                careInner.style.overflow = 'hidden';
+            }
+        });
+    }
+
     const animatedElements = document.querySelectorAll('[data-animate]');
     if (animatedElements.length) {
         const observer = getRevealObserver();
@@ -23,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const catCarouselTrack = document.querySelector('.cat-type-track');
     if (catCarouselTrack) {
-        loadCatTypes(catCarouselTrack)
+        loadCatBreeds(catCarouselTrack)
             .then((hasCards) => {
                 if (hasCards) {
                     setupCatCarousel(catCarouselTrack);
@@ -71,8 +161,8 @@ function releasePawConfetti(container) {
     setTimeout(() => paw.remove(), 1200);
 }
 
-function loadCatTypes(track) {
-    const $statusEl = $('#catTypeStatus');
+function loadCatBreeds(track) {
+    const $statusEl = $('#catBreedStatus');
 
     return $.ajax({
         url: 'https://api.thecatapi.com/v1/breeds',
@@ -98,7 +188,7 @@ function loadCatTypes(track) {
             });
 
             track.dataset.cardCount = String(normalizedCats.length);
-            track.dataset.catTypes = encodeURIComponent(JSON.stringify(normalizedCats));
+            track.dataset.catBreeds = encodeURIComponent(JSON.stringify(normalizedCats));
 
             assignFeaturedCats(normalizedCats);
 
@@ -111,7 +201,7 @@ function loadCatTypes(track) {
         .catch((error) => {
             track.innerHTML = '<div class="cat-type-error" role="alert">Unable to load cat personalities right now. Please refresh or try again later.</div>';
             delete track.dataset.cardCount;
-            delete track.dataset.catTypes;
+            delete track.dataset.catBreeds;
             if ($statusEl.length) {
                 $statusEl.text('Unable to load cat personalities at the moment.');
             }
@@ -290,7 +380,7 @@ function setupCatCarousel(track) {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const shouldPauseForMotion = () => prefersReducedMotion.matches;
 
-    const storedData = track.dataset.catTypes ? JSON.parse(decodeURIComponent(track.dataset.catTypes)) : [];
+    const storedData = track.dataset.catBreeds ? JSON.parse(decodeURIComponent(track.dataset.catBreeds)) : [];
     const totalData = storedData.length;
     let nextDataIndex = totalData;
 

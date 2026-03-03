@@ -17,7 +17,9 @@ Use this checklist to monitor progress outside of the page UI. Update the status
 | ✅ | Scrollbar styling | Page scrollbar given transparent track and subtle rounded thumb for WebKit and Firefox. | ENTITY-04 | Feb 2026 |
 | ✅ | SEO improvements | Added expanded meta description, keyword meta tag, canonical URL, Open Graph tags, Twitter Card, JSON-LD WebSite schema, and improved descriptive alt text on all static images. | ENTITY-04 | Feb 2026 |
 | ✅ | OG preview image | Create and add a 1200×630px screenshot as `images/og-preview.jpg` to activate Open Graph and Twitter Card previews. | ENTITY-04 | Mar 2026 |
-| ⬜ | Cat care enhancements | Add more care cards (e.g., litter tips) and link to trusted resources. | ENTITY-04 | Mar 2026 |
+| ✅ | SEO round 2 – keywords | Expanded keywords to include cat toy, cat health, cat grooming. Consistent cat-focused keywords across meta description, OG/Twitter descriptions, and all alt tags. | ENTITY-04 | Mar 2026 |
+| ✅ | SEO round 3 – structural | Added `og:locale`, SVG favicon, `fetchpriority="high"` on hero image, `width`/`height` on hero image, `aria-label` on all sections, keyword-rich H2/H3 headings, footer navigation links, and three JSON-LD schemas (WebSite, FAQPage, ItemList). | ENTITY-04 | Mar 2026 |
+| ✅ | Cat care enhancements | Added 6 more care cards: Cat Dental Care, Litter Box Hygiene, Cat Rest & Cosy Spaces, Safe Indoor Environment, Cat Hydration, and Cat Weight Management. JSON-LD ItemList updated to match. | ENTITY-04 | Mar 2026 |
 | ⬜ | Comment inbox | Connect the comment form to the desired backend or form service. | ENTITY-04 | Apr 2026 |
 | ⬜ | Accessibility audit | Run Lighthouse / manual checks to ensure contrast, keyboard access, and semantics. | ENTITY-04 | Apr 2026 |
 | ⬜ | Deployment review | Publish via GitHub Pages and validate analytics plus metadata. | ENTITY-04 | Apr 2026 |

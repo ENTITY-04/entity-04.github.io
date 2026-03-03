@@ -234,6 +234,101 @@ h4 {
     }
 }
 
+/* Funny cat pics grid – fixed 3 cols × 2 rows */
+.funny-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+@media (max-width: 767px) {
+    .funny-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+@media (max-width: 480px) {
+    .funny-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+    }
+}
+
+.funny-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(59, 61, 77, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+}
+
+.funny-card:hover {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 18px 40px rgba(59, 61, 77, 0.18);
+}
+
+.funny-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.funny-card .funny-caption {
+    padding: 0.6rem 0.9rem 0.75rem;
+    font-size: 0.9rem;
+    color: var(--cat-slate);
+    font-style: italic;
+}
+
+.funny-placeholder {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    background: rgba(255, 246, 236, 0.8);
+    color: rgba(59, 61, 77, 0.65);
+}
+
+/* Care tips expand/collapse – grid-based so overflow:hidden never clips shadows */
+.care-extras-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.55s ease;
+    /* no overflow:hidden here – shadows must escape freely when open */
+}
+
+.care-extras-wrap.is-open {
+    grid-template-rows: 1fr;
+}
+
+/* Inner div carries overflow:hidden only during animation */
+.care-extras-inner {
+    overflow: hidden;
+    padding-bottom: 0.25rem; /* tiny buffer so last row shadow isn't flush */
+}
+
+.care-toggle-btn {
+    border-radius: 999px;
+    padding: 0.45rem 1.4rem;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.care-toggle-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-left: 0.25rem;
+}
+
+.care-toggle-btn[aria-expanded="true"] .care-toggle-arrow {
+    transform: rotate(180deg);
+}
+
 /* Footer */
 footer {
     background-color: #fff;
