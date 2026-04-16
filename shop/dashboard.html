@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard and product management CMS for Cosy Cat Shop.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dashboard | Cosy Cat Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="./" aria-label="Cosy Cat Shop home">Cosy Cat Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#shopNav"
+                aria-controls="shopNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="shopNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./index.html#shop-products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./all-products.html">All Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index.html#shop-reviews">Reviews</a></li>
+                    <li class="nav-item dropdown ms-lg-2 mt-2 mt-lg-0">
+                        <button class="btn btn-sm btn-outline-secondary shop-profile-btn dropdown-toggle" type="button" id="shopProfileMenuDashboard" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open profile menu">
+                            <span aria-hidden="true">&#128100;</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="shopProfileMenuDashboard">
+                            <li><a class="dropdown-item js-shop-login-item" href="./login.html">Login</a></li>
+                            <li><a class="dropdown-item d-none js-shop-profile-item" href="./profile.html">Profile settings</a></li>
+                            <li><a class="dropdown-item d-none js-shop-dashboard-item active" aria-current="page" href="./dashboard.html">Dashboard</a></li>
+                            <li><a class="dropdown-item d-none js-shop-product-management-item" href="#product-management-tab">Product management</a></li>
+                            <li><hr class="dropdown-divider d-none js-shop-auth-divider"></li>
+                            <li><button class="dropdown-item text-danger d-none js-shop-logout-btn" type="button">Log out</button></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="py-5 bg-white" aria-label="Admin dashboard">
+            <div class="container py-3">
+                <p class="section-label mb-2">Dashboard</p>
+                <h1 class="h2 mb-4">Shop CMS</h1>
+
+                <ul class="nav nav-tabs mb-4" id="dashboardTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane" aria-selected="true">Overview</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="product-management-tab" data-bs-toggle="tab" data-bs-target="#product-management-tab-pane" type="button" role="tab" aria-controls="product-management-tab-pane" aria-selected="false">Product management</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="dashboardTabsContent">
+                    <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="shop-stat-card p-3 h-100">
+                                    <p class="small text-uppercase mb-1">Products</p>
+                                    <p class="h3 mb-0" id="shopStatProducts">0</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="shop-stat-card p-3 h-100">
+                                    <p class="small text-uppercase mb-1">Categories</p>
+                                    <p class="h3 mb-2" id="shopStatCategories">0</p>
+                                    <ul class="small text-muted mb-0 ps-3" id="shopCategorySummary"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="product-management-tab-pane" role="tabpanel" aria-labelledby="product-management-tab" tabindex="0">
+                        <div class="shop-cms-card p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h2 class="h4 mb-0">Products</h2>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="exportProductsBtn">Export products.json</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="resetProductsBtn">Reset defaults</button>
+                                </div>
+                            </div>
+                            <form id="productCmsForm" class="mb-3" novalidate>
+                                <input type="hidden" id="productOriginalId">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1" for="cmsProductName">Product name</label>
+                                        <input id="cmsProductName" class="form-control" placeholder="Printed Cat Theme Phone Case" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1" for="cmsProductPrice">Price</label>
+                                        <input id="cmsProductPrice" class="form-control" type="number" min="0" step="1" placeholder="18" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label mb-1" for="cmsProductDescription">Description</label>
+                                        <textarea id="cmsProductDescription" class="form-control shop-description-textarea" rows="3" placeholder="Shock-absorbing printed case with playful cat art." required></textarea>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1" for="cmsProductCategory">Category</label>
+                                        <input id="cmsProductCategory" class="form-control" placeholder="Phone Cases" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1" for="cmsProductImageFile">Product image</label>
+                                        <input id="cmsProductImageFile" class="form-control" type="file" accept="image/*">
+                                        <p class="small text-muted mb-0 mt-1">Saved image path uses ./images/filename. Keep image files inside shop/images.</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1" for="cmsProductImageAlt">Image alt text</label>
+                                        <input id="cmsProductImageAlt" class="form-control" placeholder="Printed cat-themed phone case">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1" for="cmsProductSizeInput">Variants</label>
+                                        <div class="input-group">
+                                            <input id="cmsProductSizeInput" class="form-control" placeholder="Type a variant then click Add (e.g. iPhone 15)">
+                                            <button class="btn btn-outline-secondary" type="button" id="addProductSizeBtn">Add</button>
+                                        </div>
+                                        <input id="cmsProductSizes" type="hidden">
+                                        <div id="cmsProductSizesList" class="shop-chip-list mt-2" aria-live="polite"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label mb-1" for="cmsProductColors">Styles</label>
+                                        <input id="cmsProductColors" class="form-control" placeholder="Matte Black, Clear Frost, Pastel Pink">
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2 mt-3">
+                                    <button class="btn btn-coral text-white" type="submit">Save product</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="clearProductFormBtn">Clear</button>
+                                </div>
+                            </form>
+                            <h3 class="h5 mb-3">Current product cards</h3>
+                            <div class="row g-4" id="productCmsPreviewGrid" aria-live="polite"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dashboardAlert" class="alert mt-4 d-none" role="alert"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4">
+        <div class="container text-center small">
+            <nav class="mb-2" aria-label="Footer navigation">
+                <a href="../index.html" class="text-muted text-decoration-none me-3">Main Site</a>
+                <a href="./index.html#shop-products" class="text-muted text-decoration-none me-3">Products</a>
+                <a href="./all-products.html" class="text-muted text-decoration-none me-3">All Products</a>
+                <a href="./index.html#shop-reviews" class="text-muted text-decoration-none me-3">Reviews</a>
+                <a href="./dashboard.html" class="text-muted text-decoration-none">Dashboard</a>
+            </nav>
+            <p class="mb-1">Cosy Cat Shop • Crafted for curious cats • 2026</p>
+            <p class="mb-0 text-muted">Prototype website for educational purpose under 6751YCOM Website and e-Commerce Management.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

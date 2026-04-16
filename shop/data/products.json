@@ -1,0 +1,258 @@
+[
+  {
+    "id": "7b979c36-a922-4cd9-ac0e-cf25b61053ba",
+    "name": "Colourful cat theme badge",
+    "category": "Enamel Badge",
+    "description": "Add a playful touch of personality to your everyday style with our customizable cat-themed badge, designed for cat lovers who want to carry a piece of their furry companion wherever they go. Each badge is carefully crafted using high-quality materials and can be personalized with your cat’s image, name, or a unique design that reflects your vibe—whether cute, minimal, or quirky. Lightweight, durable, and easy to attach to bags, clothing, or accessories, this badge is more than just a decoration; it’s a small but meaningful expression of your love for cats, making it a perfect gift or personal keepsake.",
+    "price": 5,
+    "image": "./images/Colourful cat theme badge.png",
+    "imageAlt": "\"Colourful cat theme badge\" Images",
+    "sizes": [
+      "Standard"
+    ],
+    "defaultSize": "Standard",
+    "colors": [
+      "Gloss"
+    ],
+    "defaultColor": "Gloss"
+  },
+  {
+    "id": "7043fae1-d80e-4d27-af67-a660f963fcc1",
+    "name": "Adopt all the cat theme badge",
+    "category": "Enamel Badge",
+    "description": "Add a playful touch of personality to your everyday style with our customizable cat-themed badge, designed for cat lovers who want to carry a piece of their furry companion wherever they go. Each badge is carefully crafted using high-quality materials and can be personalized with your cat’s image, name, or a unique design that reflects your vibe—whether cute, minimal, or quirky. Lightweight, durable, and easy to attach to bags, clothing, or accessories, this badge is more than just a decoration; it’s a small but meaningful expression of your love for cats, making it a perfect gift or personal keepsake.",
+    "price": 5,
+    "image": "./images/Adopt all the cat theme badge.png",
+    "imageAlt": "\"Adopt all the cat theme badge\" Images",
+    "sizes": [
+      "Standard"
+    ],
+    "defaultSize": "Standard",
+    "colors": [
+      "Gloss"
+    ],
+    "defaultColor": "Gloss"
+  },
+  {
+    "id": "8f5f35ed-bdc4-4272-8da0-2d01d82af97d",
+    "name": "Just my cate and coffee cat theme badge",
+    "category": "Enamel Badge",
+    "description": "Add a playful touch of personality to your everyday style with our customizable cat-themed badge, designed for cat lovers who want to carry a piece of their furry companion wherever they go. Each badge is carefully crafted using high-quality materials and can be personalized with your cat’s image, name, or a unique design that reflects your vibe—whether cute, minimal, or quirky. Lightweight, durable, and easy to attach to bags, clothing, or accessories, this badge is more than just a decoration; it’s a small but meaningful expression of your love for cats, making it a perfect gift or personal keepsake.",
+    "price": 5,
+    "image": "./images/Just my cat and coffee cat theme badge.png",
+    "imageAlt": "\"Just my cat and coffee cat theme badge\" Images",
+    "sizes": [
+      "Standard"
+    ],
+    "defaultSize": "Standard",
+    "colors": [
+      "Gloss"
+    ],
+    "defaultColor": "Gloss"
+  },
+  {
+    "id": "a4742665-8c55-4967-93c5-27c4f16b8528",
+    "name": "Stay pawsitive cat theme badge",
+    "category": "Enamel Badge",
+    "description": "Add a playful touch of personality to your everyday style with our customizable cat-themed badge, designed for cat lovers who want to carry a piece of their furry companion wherever they go. Each badge is carefully crafted using high-quality materials and can be personalized with your cat’s image, name, or a unique design that reflects your vibe—whether cute, minimal, or quirky. Lightweight, durable, and easy to attach to bags, clothing, or accessories, this badge is more than just a decoration; it’s a small but meaningful expression of your love for cats, making it a perfect gift or personal keepsake.",
+    "price": 5,
+    "image": "./images/Stay pawsitive cat theme badge.png",
+    "imageAlt": "\"Stay pawsitive cat theme badge\" Images",
+    "sizes": [
+      "Standard"
+    ],
+    "defaultSize": "Standard",
+    "colors": [
+      "Gloss"
+    ],
+    "defaultColor": "Gloss"
+  },
+  {
+    "id": "f5b4aff2-a7b9-4199-a8c0-e79808598446",
+    "name": "Im feline good cat theme badge",
+    "category": "Enamel Badge",
+    "description": "Add a playful touch of personality to your everyday style with our customizable cat-themed badge, designed for cat lovers who want to carry a piece of their furry companion wherever they go. Each badge is carefully crafted using high-quality materials and can be personalized with your cat’s image, name, or a unique design that reflects your vibe—whether cute, minimal, or quirky. Lightweight, durable, and easy to attach to bags, clothing, or accessories, this badge is more than just a decoration; it’s a small but meaningful expression of your love for cats, making it a perfect gift or personal keepsake.",
+    "price": 5,
+    "image": "./images/Im feline good cat theme badge.png",
+    "imageAlt": "\"Im feline good cat theme badge\" Images",
+    "sizes": [
+      "Standard"
+    ],
+    "defaultSize": "Standard",
+    "colors": [
+      "Gloss"
+    ],
+    "defaultColor": "Gloss"
+  },
+
+  {
+    "id": "9019e838-1b26-4c78-9697-52a47430c5df",
+    "name": "Light theme cartoon cat mousepad",
+    "category": "Mousepad",
+    "description": "Bring your workspace to life with our custom cat-themed mouse pad, designed for both comfort and personality. Made with a premium soft cloth surface and a non-slip rubber base, it provides smooth, precise mouse movement while staying firmly in place during use. Each mouse pad can be personalized with your cat’s photo, name, or a unique design style, turning an everyday desk essential into something truly meaningful. The high-quality print ensures vibrant, long-lasting colours that won’t easily fade, making it perfect for study, work, or gaming setups while showing off your love for cats in a fun and stylish way.",
+    "price": 75,
+    "image": "./images/Light theme cartoon cat mousepad.png",
+    "imageAlt": "\"Light theme cartoon cat mousepad\" Images",
+    "sizes": [
+      "Medium (30cm × 40cm)"
+    ],
+    "defaultSize": "Medium (30cm × 40cm)",
+    "colors": [
+      "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+    ],
+    "defaultColor": "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+  },
+  {
+    "id": "8f2a5569-c200-4b39-9058-cbf44bf5d590",
+    "name": "Gray theme cartoon cat mousepad",
+    "category": "Mousepad",
+    "description": "Bring your workspace to life with our custom cat-themed mouse pad, designed for both comfort and personality. Made with a premium soft cloth surface and a non-slip rubber base, it provides smooth, precise mouse movement while staying firmly in place during use. Each mouse pad can be personalized with your cat’s photo, name, or a unique design style, turning an everyday desk essential into something truly meaningful. The high-quality print ensures vibrant, long-lasting colours that won’t easily fade, making it perfect for study, work, or gaming setups while showing off your love for cats in a fun and stylish way.",
+    "price": 75,
+    "image": "./images/Gray theme cartoon cat mousepad.png",
+    "imageAlt": "\"Gray theme cartoon cat mousepad\" Images",
+    "sizes": [
+      "Medium (30cm × 40cm)"
+    ],
+    "defaultSize": "Medium (30cm × 40cm)",
+    "colors": [
+      "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+    ],
+    "defaultColor": "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+  },
+  {
+    "id": "b773238c-94fc-4fd6-a0eb-4b672886f4a7",
+    "name": "Blue theme cartoon cat mousepad",
+    "category": "Mousepad",
+    "description": "Bring your workspace to life with our custom cat-themed mouse pad, designed for both comfort and personality. Made with a premium soft cloth surface and a non-slip rubber base, it provides smooth, precise mouse movement while staying firmly in place during use. Each mouse pad can be personalized with your cat’s photo, name, or a unique design style, turning an everyday desk essential into something truly meaningful. The high-quality print ensures vibrant, long-lasting colours that won’t easily fade, making it perfect for study, work, or gaming setups while showing off your love for cats in a fun and stylish way.",
+    "price": 75,
+    "image": "./images/Blue theme cartoon cat mousepad.png",
+    "imageAlt": "\"Blue theme cartoon cat mousepad\" Images",
+    "sizes": [
+      "Medium (30cm × 40cm)"
+    ],
+    "defaultSize": "Medium (30cm × 40cm)",
+    "colors": [
+      "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+    ],
+    "defaultColor": "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+  },
+  {
+    "id": "2a9338dc-8671-4c93-922b-6effbefb1f05",
+    "name": "Dark theme cartoon cat mousepad",
+    "category": "Mousepad",
+    "description": "Bring your workspace to life with our custom cat-themed mouse pad, designed for both comfort and personality. Made with a premium soft cloth surface and a non-slip rubber base, it provides smooth, precise mouse movement while staying firmly in place during use. Each mouse pad can be personalized with your cat’s photo, name, or a unique design style, turning an everyday desk essential into something truly meaningful. The high-quality print ensures vibrant, long-lasting colours that won’t easily fade, making it perfect for study, work, or gaming setups while showing off your love for cats in a fun and stylish way.",
+    "price": 75,
+    "image": "./images/Dark theme cartoon cat mousepad.png",
+    "imageAlt": "\"Dark theme cartoon cat mousepad\" Images",
+    "sizes": [
+      "Medium (30cm × 40cm)"
+    ],
+    "defaultSize": "Medium (30cm × 40cm)",
+    "colors": [
+      "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+    ],
+    "defaultColor": "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+  },
+  {
+    "id": "845ebebe-e5f5-43cb-a0d6-312c480238b8",
+    "name": "Light theme cartoon cat phone case",
+    "category": "Phone Case",
+    "description": "Protect your phone in style with our custom cat-themed phone case, designed for cat lovers who want to carry a piece of their furry companion everywhere they go. Each case is made from durable, shock-resistant materials to provide reliable protection against scratches, drops, and everyday wear while maintaining a slim and comfortable fit. You can personalize your case with your cat’s photo, name, or a unique design style, turning a simple phone accessory into something truly meaningful and personal. With high-quality printing that ensures vibrant and long-lasting colours, this phone case is the perfect blend of protection, personality, and cuteness.",
+    "price": 25,
+    "image": "./images/Light theme cartoon cat phone case.png",
+    "imageAlt": "\"Light theme cartoon cat phone case\" Images",
+    "sizes": [
+      "Iphone 16"
+    ],
+    "defaultSize": "Iphone 16",
+    "colors": [
+      "Matt"
+    ],
+    "defaultColor": "Matt"
+  },
+  {
+    "id": "2e4c369f-0fd2-415c-aee9-374f7d46483b",
+    "name": "Dark theme cartoon cat phone case",
+    "category": "Phone Case",
+    "description": "Protect your phone in style with our custom cat-themed phone case, designed for cat lovers who want to carry a piece of their furry companion everywhere they go. Each case is made from durable, shock-resistant materials to provide reliable protection against scratches, drops, and everyday wear while maintaining a slim and comfortable fit. You can personalize your case with your cat’s photo, name, or a unique design style, turning a simple phone accessory into something truly meaningful and personal. With high-quality printing that ensures vibrant and long-lasting colours, this phone case is the perfect blend of protection, personality, and cuteness.",
+    "price": 25,
+    "image": "./images/Dark theme cartoon cat phone case.png",
+    "imageAlt": "\"Dark theme cartoon cat phone case\" Images",
+    "sizes": [
+      "Iphone 16"
+    ],
+    "defaultSize": "Iphone 16",
+    "colors": [
+      "Matt"
+    ],
+    "defaultColor": "Matt"
+  },
+  {
+    "id": "5104150f-127a-44c4-a5f5-83569909e5ba",
+    "name": "Yellow theme cartoon cat phone case",
+    "category": "Phone Case",
+    "description": "Protect your phone in style with our custom cat-themed phone case, designed for cat lovers who want to carry a piece of their furry companion everywhere they go. Each case is made from durable, shock-resistant materials to provide reliable protection against scratches, drops, and everyday wear while maintaining a slim and comfortable fit. You can personalize your case with your cat’s photo, name, or a unique design style, turning a simple phone accessory into something truly meaningful and personal. With high-quality printing that ensures vibrant and long-lasting colours, this phone case is the perfect blend of protection, personality, and cuteness.",
+    "price": 25,
+    "image": "./images/Yellow theme cartoon cat phone case.png",
+    "imageAlt": "\"Yellow theme cartoon cat phone case\" Images",
+    "sizes": [
+      "Iphone 16"
+    ],
+    "defaultSize": "Iphone 16",
+    "colors": [
+      "Matt"
+    ],
+    "defaultColor": "Matt"
+  },
+  {
+    "id": "8166f235-9b0e-4d08-a19f-8d75a058bb79",
+    "name": "CUSTOM ORDER Cat Theme Printed Phone Case",
+    "category": "Phone Case",
+    "description": "Bring your ideas to life with our custom order service, designed for customers who want a truly personal and unique product. Whether it’s a phone case, mouse pad, or badge, you can customise your design with your own cat photo, name, or preferred style to create something that reflects your personality. Each order is carefully reviewed and crafted to ensure high-quality printing, vibrant colours, and a finish that matches your chosen product type. As every custom item is made individually, we take extra care in production to ensure your design is accurately represented and meets your expectations. If you need to make changes, provide additional details, or have special requests regarding your design, please email us at along with your order ID.",
+    "price": 35,
+    "image": "./images/CUSTOM ORDER.jpg",
+    "imageAlt": "\"CUSTOM ORDER Cat Theme Printed Phone Case\" Images",
+    "sizes": [
+      "Iphone 16"
+    ],
+    "defaultSize": "Iphone 16",
+    "colors": [
+      "Matt"
+    ],
+    "defaultColor": "Matt"
+  },
+  {
+    "id": "d2a3f152-2a39-46df-9983-bd7140c7721b",
+    "name": "CUSTOM ORDER Cat Theme Printed Mousepad",
+    "category": "Mousepad",
+    "description": "Bring your ideas to life with our custom order service, designed for customers who want a truly personal and unique product. Whether it’s a phone case, mouse pad, or badge, you can customise your design with your own cat photo, name, or preferred style to create something that reflects your personality. Each order is carefully reviewed and crafted to ensure high-quality printing, vibrant colours, and a finish that matches your chosen product type. As every custom item is made individually, we take extra care in production to ensure your design is accurately represented and meets your expectations. If you need to make changes, provide additional details, or have special requests regarding your design, please email us at along with your order ID.",
+    "price": 100,
+    "image": "./images/CUSTOM ORDER.jpg",
+    "imageAlt": "\"CUSTOM ORDER Cat Theme Printed Mousepad\" Images",
+    "sizes": [
+      "Large (40cm × 90cm)"
+    ],
+    "defaultSize": "Large (40cm × 90cm)",
+    "colors": [
+      "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+    ],
+    "defaultColor": "Premium Soft Cloth Surface with Anti-Slip Rubber Base"
+  },
+  {
+    "id": "d73b065c-707c-44a8-954f-b69b99443779",
+    "name": "CUSTOM ORDER Cat Theme Printed Enamel Badge",
+    "category": "Enamel Badge",
+    "description": "Bring your ideas to life with our custom order service, designed for customers who want a truly personal and unique product. Whether it’s a phone case, mouse pad, or badge, you can customise your design with your own cat photo, name, or preferred style to create something that reflects your personality. Each order is carefully reviewed and crafted to ensure high-quality printing, vibrant colours, and a finish that matches your chosen product type. As every custom item is made individually, we take extra care in production to ensure your design is accurately represented and meets your expectations. If you need to make changes, provide additional details, or have special requests regarding your design, please email us at along with your order ID.",
+    "price": 10,
+    "image": "./images/CUSTOM ORDER.jpg",
+    "imageAlt": "\"CUSTOM ORDER Cat Theme Printed Enamel Badge\" Images",
+    "sizes": [
+      "Standard"
+    ],
+    "defaultSize": "Standard",
+    "colors": [
+      "Gloss"
+    ],
+    "defaultColor": "Gloss"
+  }
+]
